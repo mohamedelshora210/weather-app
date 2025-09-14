@@ -103,7 +103,7 @@ function displayData(){
                         </div>
                         <div class="icon d-flex align-items-center justify-content-between my-4">
                             <span class="text-capitalize">wind degree</span>
-                            <span>${data.current.wind_degree} %<i class="fas fa-wind ms-3"></i></span>
+                            <span>${data.current.wind_degree}%<i class="fas fa-wind ms-3"></i></span>
                         </div>
                         <div class="icon d-flex align-items-center justify-content-between my-4">
                             <span class="text-capitalize">wind wind direction</span>
