@@ -1,0 +1,54 @@
+
+@media (max-width : 1024px)
+{
+    nav.navbar
+    {
+        .navbar-brand
+        {
+            width: 40%;
+             img
+        {
+            width: 40%;
+        }
+        }
+    }
+    nav 
+    {
+        background-image: linear-gradient(rgba(0,0,0,.2) , rgba(0,0,0,.2));
+        .input-group
+    {
+        width: 50%;
+    }
+    }
+    .temp
+    {
+        width: 100%;
+    }
+}
+
+@media (max-width : 767px){
+    .fs-48
+    {
+        font-size: 3rem;
+    }
+    .fs-32
+    {
+        font-size: 1.5rem;
+    }
+    
+}
+@media (min-width : 767px) and (max-width : 1024px)
+{
+     nav.navbar
+     {
+         .navbar-brand
+        {
+             img
+        {
+            width: 25%;
+        }
+        }
+     }
+    
+}
+
