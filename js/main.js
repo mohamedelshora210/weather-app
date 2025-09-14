@@ -1,7 +1,8 @@
 
 const searchInput = document.getElementById("search");
 const rowData = document.querySelector(".main");
-const section = document.querySelector("#weather")
+const section = document.querySelector("#weather");
+const loader = document.querySelector(".loader");
 let today = new Date()
 let tomorrow = new Date(today);
 tomorrow.setDate(today.getDate() + 1);
@@ -17,13 +18,16 @@ async function getApi(city){
        data = await response.json();
       displayData();
       changeImage();   
-      console.log(data);
-      
-      
    }
    catch
    {
       getApi("cairo");
+   }
+   finally
+   {
+        setTimeout(()=>{
+            loader.classList.replace("d-flex" , "d-none")
+        },1500)
    }
 };
 
