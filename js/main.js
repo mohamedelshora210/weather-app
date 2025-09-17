@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search");
 const rowData = document.querySelector(".main");
 const section = document.querySelector("#weather");
 const loader = document.querySelector(".loader");
+let coord = '';
 let today = new Date()
 let tomorrow = new Date(today);
 tomorrow.setDate(today.getDate() + 1);
@@ -21,7 +22,13 @@ async function getApi(city){
    }
    catch
    {
-      getApi("cairo");
+    if(coord){
+        getApi(coord);
+    }
+    else
+    {
+        getApi("cairo")
+    } 
    }
    finally
    {
@@ -148,4 +155,19 @@ function displayData(){
    `
    rowData.innerHTML = cartoona;
 }
-getApi("cairo");
+function getLocation(){
+    navigator.geolocation.getCurrentPosition(success , error);
+}
+function success(position){
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+     coord = `${latitude},${longitude}` 
+    getApi(coord);
+}
+function error(){
+    console.log("can't to arrive to location");
+    getApi("cairo");  
+}
+getLocation();
+
+ 
